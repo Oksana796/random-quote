@@ -7,7 +7,7 @@ import "./App.css";
 function App() {
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
-  const [color, setColor] = useState("");
+  const [color, setColor] = useState("darkGrey");
 
   let colors = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
 
@@ -22,7 +22,7 @@ function App() {
         const allDataQuotes = data.quotes;
         const randomNum = Math.floor(Math.random() * allDataQuotes.length);
         const randomQuote = allDataQuotes[randomNum];
-        console.log(randomQuote);
+        //console.log(randomQuote);
 
         setQuote(randomQuote.quote);
         setAuthor(randomQuote.author);
@@ -67,7 +67,6 @@ function App() {
         </div>
         <div className="buttons">
           <a
-          
             href="twitter.com/intent/tweet"
             className="button"
             id="tweet-quote"
