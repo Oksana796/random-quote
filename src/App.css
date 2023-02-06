@@ -11,16 +11,8 @@ body {
   justify-content: center;
   align-items: center;
 }
-.App {
-  width: 550px;
-  height: 310px;
-  background-color: yellow;
-  position: relative;
-  z-index: 2;
-  border: 1px solid black;
-}
+
 #quote-box {
-  
   width: 450px;
   position: relative;
   display: table;
@@ -51,9 +43,10 @@ body {
 
 .buttons {
   width: 450px;
+  height: 0;
   margin: auto;
   display: block;
-  border: 1px solid black;
+  
 }
 .button {
   height: 38px;

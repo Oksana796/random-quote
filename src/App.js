@@ -7,6 +7,7 @@ import "./App.css";
 function App() {
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
+  const [color, setColor] = useState("");
 
   const getQuotes = () => {
     fetch(
@@ -28,7 +29,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <>
       <div id="quote-box">
         <div id="quote-text">
           <FaQuoteLeft
@@ -81,7 +82,7 @@ function App() {
         by
         <a href="/"> Oksana</a>
       </div>
-    </div>
+    </>
   );
 }
 
