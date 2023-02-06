@@ -16,10 +16,10 @@ body {
   width: 450px;
   position: relative;
   display: table;
-  border: 1px solid black;
   border-radius: 3px;
   padding: 40px 50px;
-  
+  z-index: 2;
+  background-color: #fff;
 }
 #quote-text {
   text-align: center;
@@ -27,18 +27,19 @@ body {
   height: auto;
   clear: both;
   font-weight: 500;
-  font-size: 1.75em;
-  border: 1px solid black;
+  font-size: 2em;
   opacity: 1;
 }
+
 #author {
   opacity: 1;
   width: 450px;
-    height: auto;
-    clear: both;
-    padding-top: 20px;
-    font-size: 1em;
-    text-align: right;
+  height: auto;
+  clear: both;
+  padding-top: 20px;
+  font-size: 1.2em;
+  font-weight: 400;
+  text-align: right;
 }
 
 .buttons {
@@ -46,15 +47,14 @@ body {
   height: 0;
   margin: auto;
   display: block;
-  
 }
 .button {
   height: 38px;
   border: none;
   border-radius: 3px;
-  color: black;
+  color: white;
   outline: none;
-  font-size: 0.85em;
+  font-size: 1em;
   padding: 8px 18px;
   margin-top: 30px;
   opacity: 1;
@@ -69,11 +69,10 @@ body {
   display: block;
   margin: 15px auto 30px auto;
   font-size: 0.8em;
-  background-color: #fff;
-  border: 1px solid black;
+  color: white;
 }
 .footer a {
   font-weight: 500;
   text-decoration: none;
-  color: black;
+  color: white;
 }

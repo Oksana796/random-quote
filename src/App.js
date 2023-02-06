@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { FaTwitter, FaQuoteLeft } from "react-icons/fa";
 
@@ -8,6 +8,8 @@ function App() {
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
   const [color, setColor] = useState("");
+
+  let colors = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
 
   const getQuotes = () => {
     fetch(
@@ -28,6 +30,21 @@ function App() {
       .catch((err) => console.error("Sorry"));
   };
 
+  const getColor = () => {
+    let hexColor = "#";
+
+    for (let i = 0; i < 6; i++) {
+      let random = Math.floor(Math.random() * colors.length);
+      hexColor = hexColor + colors[random];
+    }
+    console.log(hexColor);
+    setColor(hexColor);
+  };
+
+  useEffect(() => {
+    document.body.style.background = color;
+  }, [color]);
+
   return (
     <>
       <div id="quote-box">
@@ -37,14 +54,20 @@ function App() {
               fontSize: "1em",
               marginRight: "0.4em",
               display: "inline-block",
-              verticalAlign: "middle",
+              verticalAlign: "top",
+              color: color,
             }}
           />
-          <span id="text">{quote}</span>
+          <span id="text" style={{ color }}>
+            {quote}
+          </span>
         </div>
-        <div id="author">- {author}</div>
+        <div id="author" style={{ color }}>
+          - {author}
+        </div>
         <div className="buttons">
           <a
+          
             href="twitter.com/intent/tweet"
             className="button"
             id="tweet-quote"
@@ -54,7 +77,7 @@ function App() {
             <FaTwitter
               style={{
                 display: "inline-block",
-                backgroundColor: "black",
+                backgroundColor: color,
                 float: "left",
                 padding: "6px 0",
                 fontSize: "inherit",
@@ -73,7 +96,16 @@ function App() {
             />
           </a>
 
-          <button className="button" id="new-quote" onClick={() => getQuotes()}>
+          <button
+            className="button"
+            id="new-quote"
+            style={{ backgroundColor: color }}
+            onClick={(e) => {
+              e.stopPropagation();
+              getQuotes();
+              getColor();
+            }}
+          >
             New quote
           </button>
         </div>
